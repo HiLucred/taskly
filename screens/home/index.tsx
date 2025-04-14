@@ -62,7 +62,8 @@ export const Home = () => {
 
     setTasks(tasksUpdated)
 
-    if (tasksSummary.pending === 0) setShowConfetti(true)
+    const pendingTasks = tasks.filter((task) => !task.isChecked).length
+    if (pendingTasks === 0) setShowConfetti(true)
   }
 
   return (
